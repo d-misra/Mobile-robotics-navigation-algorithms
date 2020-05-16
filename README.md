@@ -12,7 +12,7 @@ A collection of algorithms for control and navigation of mobile robots. These pr
 
 The mobile robot used in these projects is a ```KUKA youBot```. It is controlled in a simulated environment (in CoppeliaSim) with bindings to communicate with the control program written in MATLAB.
 
-Inputs to the MATLAB callback function consist of the position and orientation of the robot and data from the LIDAR sensor. Outputs from the program controls the linear and angular velocities of the simulated robot base wheels to perform a specified task. A Finite State Machine (FSM) manages the sequence of robot behaviours, e.g. initial, moving forward, stopping, moving backward. 
+Inputs to the MATLAB callback function consist of the robot's position and orientation and data from the LIDAR sensors. Outputs from the program controls the linear and angular velocities of the simulated robot base wheels to perform a specified task. A Finite State Machine (FSM) manages the sequence of robot behaviours, e.g. initial, moving forward, stopping, moving backward. 
 
 Topics covered in this repository : 
 - Trajectory generations
@@ -36,13 +36,13 @@ Demos can be viewed [here](https://www.youtube.com/watch?v=2hio_rtz3Eo) and [her
 
 ## Project 2
 
-Introduces reactive control and navigation for obstacle avoidance using data gathered by LIDAR sensors. 
+Introduces reactive control and navigation for obstacle avoidance using data gathered by LIDAR sensors. The LIDAR sensor in the simulator has a range of 5 m and sends 684 rays, and is analysed to find the nearest obstacle. 
 
 ![pic1](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/demo2.png)
 
 - **Wall-following algorithm**
 
-The youBot moves along the wall, using LIDAR data to detect the wall and avoid collisions. The LIDAR sensor in the simulator has a range of 5 m and sends 684 rays, and is analysed to find the nearest obstacle. 3 proportional regulators are used to keep at a fixed distance to the wall, move along it and maintain perpendicular orientation. 
+The youBot moves along the wall, using LIDAR data to detect the wall and avoid collisions. 3 proportional regulators are used to keep at a fixed distance to the wall, move along it and maintain perpendicular orientation. 
 
 Code in ```code/solution2a.m```
 
@@ -66,6 +66,9 @@ Introduces localization and path planning algorithms.
 
 - **Localisation using Particle Filter**
 
+In this task, the robot does not know its pose. Instead, the odometry for every control step is known. The robot's is estimated from odometry data and a provided map. 
+
+[![pic1b](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/vid2b.png)](https://www.youtube.com/watch?v=0qlQZZPEeEU)
 
 
 - **Path planning with Wavefront**
