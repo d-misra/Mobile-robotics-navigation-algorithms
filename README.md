@@ -66,19 +66,21 @@ Introduces localization and path planning algorithms.
 
 ###  Localisation using Particle Filter
 
-In this task, the robot does not know its pose. Instead, the [odometry](https://groups.csail.mit.edu/drl/courses/cs54-2001s/odometry.html) for every control step is known. The robot's pose is estimated from odometry data and a provided map. 
+In this task, the robot does not know its pose. Instead, the [odometry](https://groups.csail.mit.edu/drl/courses/cs54-2001s/odometry.html) for every control step is known. The robot's pose is estimated from odometry data and a provided map.
 
 Here, we use a probabilistic state estimation technique using sampling-based distribution representation of a particle filter. Such localization is also known as Monte Carlo localization and the [wikipedia page](https://en.wikipedia.org/wiki/Monte_Carlo_localization) describes it as :
 
 
 > The algorithm uses a particle filter to represent the distribution of likely states, with each particle representing a possible state, i.e., a hypothesis of where the robot is.[4] The algorithm typically starts with a uniform random distribution of particles over the configuration space, meaning the robot has no information about where it is and assumes it is equally likely to be at any point in space.[4] Whenever the robot moves, it shifts the particles to predict its new state after the movement. Whenever the robot senses something, the particles are resampled based on recursive Bayesian estimation, i.e., how well the actual sensed data correlate with the predicted state. Ultimately, the particles should converge towards the actual position of the robot.
 
-Code in ```code/solution3a.m``` presents particle filter localization without using LIDAR data.  
+Code in ```code/solution3a.m``` presents particle filter localization. Distance to the walls are computed using the laser range sensors.
 
 [![pic1b](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/vid3a.png)](https://www.youtube.com/watch?v=72t36ocyBEg)
 
-
-An extended implementation of the particle filter localizationn using LIDAR data is given in ```code/solution3b.m```.
+Some resources on Particle filter localization:
+- A video [tutorial](https://www.youtube.com/watch?v=6bcktUxmOqQ) from Penn State robotics
+- Original [publication](https://www.ri.cmu.edu/pub_files/pub1/dellaert_frank_1999_2/dellaert_frank_1999_2.pdf) on Monte Carlo localization for mobile robots
+- A blog [post](https://towardsdatascience.com/particle-filter-on-localisation-9e0802282aaf) on particle filter localisation
 
 ### Path planning with Wavefront
 
