@@ -12,9 +12,9 @@ A collection of algorithms for control and navigation of mobile robots. These pr
 
 The mobile robot used in these projects is a ```KUKA youBot```. It is controlled in a simulated environment (in CoppeliaSim) with bindings to communicate with the control program written in MATLAB.
 
-Inputs to the MATLAB callback function consist of the robot's position and orientation and data from the LIDAR sensors. Outputs from the program controls the linear and angular velocities of the simulated robot base wheels to perform a specified task. A Finite State Machine (FSM) manages the sequence of robot behaviours, e.g. initial, moving forward, stopping, moving backward. 
+Inputs to the MATLAB callback function consist of the robot's position and orientation and data from the LIDAR sensors. Outputs from the program controls the linear and angular velocities of the simulated robot base wheels to perform a specified task. A Finite State Machine (FSM) manages the sequence of robot behaviours, e.g. initial, moving forward, stopping, moving backward.
 
-Topics covered in this repository : 
+Topics covered in this repository :
 - Trajectory generations
 - Wall following algorithm
 - Bug2 algorithm
@@ -36,25 +36,25 @@ Demos can be viewed [here](https://www.youtube.com/watch?v=2hio_rtz3Eo) and [her
 
 ## Project 2
 
-Introduces reactive control and navigation for obstacle avoidance using data gathered by LIDAR sensors. The LIDAR sensor in the simulator has a range of 5 m and sends 684 rays, and is analysed to find the nearest obstacle. 
+Introduces reactive control and navigation for obstacle avoidance using data gathered by LIDAR sensors. The LIDAR sensor in the simulator has a range of 5 m and sends 684 rays, and is analysed to find the nearest obstacle.
 
 ![pic1](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/demo2.png)
 
-- **Wall-following algorithm**
+### Wall-following algorithm
 
-The youBot moves along the wall, using LIDAR data to detect the wall and avoid collisions. 3 proportional regulators are used to keep at a fixed distance to the wall, move along it and maintain perpendicular orientation. 
+The youBot moves along the wall, using LIDAR data to detect the wall and avoid collisions. 3 proportional regulators are used to keep at a fixed distance to the wall, move along it and maintain perpendicular orientation.
 
 Code in ```code/solution2a.m```
 
 [![pic1a](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/vid2a.png)](https://www.youtube.com/watch?v=587Ly53RAOk)
 
-- **Bug2 algorithm**
+###  Bug2 algorithm
 
-Bug algorithms assume only local knowledge of the environment, and the robot has simple behaviours - move along a wall or along a straight line toward the goal. 
+Bug algorithms assume only local knowledge of the environment, and the robot has simple behaviours - move along a wall or along a straight line toward the goal.
 
-In Bug 2 algorithm, first a line joining the initial and goal positions, called the ```m-line``` is created. The robot starts to move along this line towards the goal. If an obstacle is encountered, the robot circumnavigates it until the m-line is encountered again, *closer to the goal*. Now the obstacle is left and the robot continues moving along the m-line to reach the goal. 
+In Bug 2 algorithm, first a line joining the initial and goal positions, called the ```m-line``` is created. The robot starts to move along this line towards the goal. If an obstacle is encountered, the robot circumnavigates it until the m-line is encountered again, *closer to the goal*. Now the obstacle is left and the robot continues moving along the ```m-line``` to reach the goal.
 
-Code in ```code/solution2b.m```
+Code in ```code/solution2b.m```.
 
 [![pic1b](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/vid2b.png)](https://www.youtube.com/watch?v=0qlQZZPEeEU)
 
@@ -62,22 +62,31 @@ More on Bug algorithms can be read [here](https://www.cs.cmu.edu/~motionplanning
 
 ## Project 3
 
-Introduces localization and path planning algorithms. 
+Introduces localization and path planning algorithms.
 
-- **Localisation using Particle Filter**
+###  Localisation using Particle Filter
 
-In this task, the robot does not know its pose. Instead, the odometry for every control step is known. The robot's is estimated from odometry data and a provided map. 
+In this task, the robot does not know its pose. Instead, the [odometry](https://groups.csail.mit.edu/drl/courses/cs54-2001s/odometry.html) for every control step is known. The robot's pose is estimated from odometry data and a provided map. 
 
-[![pic1b](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/vid2b.png)](https://www.youtube.com/watch?v=0qlQZZPEeEU)
+Here, we use a probabilistic state estimation technique using sampling-based distribution representation of a particle filter. Such localization is also known as Monte Carlo localization and the [wikipedia page](https://en.wikipedia.org/wiki/Monte_Carlo_localization) describes it as :
 
 
-- **Path planning with Wavefront**
+> The algorithm uses a particle filter to represent the distribution of likely states, with each particle representing a possible state, i.e., a hypothesis of where the robot is.[4] The algorithm typically starts with a uniform random distribution of particles over the configuration space, meaning the robot has no information about where it is and assumes it is equally likely to be at any point in space.[4] Whenever the robot moves, it shifts the particles to predict its new state after the movement. Whenever the robot senses something, the particles are resampled based on recursive Bayesian estimation, i.e., how well the actual sensed data correlate with the predicted state. Ultimately, the particles should converge towards the actual position of the robot.
+
+Code in ```code/solution3a.m``` presents particle filter localization without using LIDAR data.  
+
+[![pic1b](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/vid3a.png)](https://www.youtube.com/watch?v=72t36ocyBEg)
+
+
+An extended implementation of the particle filter localizationn using LIDAR data is given in ```code/solution3b.m```.
+
+### Path planning with Wavefront
 
 More details about wavefront planner can be found [here](http://www.societyofrobots.com/programming_wavefront.shtml)
 
 ## Acknowledgments
 
-Details of the project descriptions can be found on the official course [page](http://rcprg-ros-pkg.github.io/emor_trs/index.html). Setup instructions can also be found there along with scenes and helper functions needed for have the environment in these projects.
+Details of the project descriptions can be found on the official course [page](http://rcprg-ros-pkg.github.io/emor_trs/index.html). Setup instructions along with scenes and helper functions are provided, necessary to setup the environment used for these projects.
 
 Sometimes the official webpage is not available (or reads **yet to be announced**, depending when in the academic year since EMOR is taught in the winter semester). In such cases, please right click and copy the link address of the project html files (within the folder ```course_page```) and paste it in http://htmlpreview.github.io/
 )
