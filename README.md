@@ -1,3 +1,5 @@
+# Motion planning and control for Mobile Robots
+
 A collection of algorithms for control and navigation of mobile robots. These programs were developed during my masters program's EMOR course tutorials (2016-17 session) at Warsaw University of Technology, Poland.
 
 ## Requirements
