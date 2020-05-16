@@ -40,17 +40,21 @@ Introduces reactive control and navigation for obstacle avoidance using data gat
 
 ![pic1](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/demo2.png)
 
-### Wall-following algorithm
+- **Wall-following algorithm**
 
-The youBot moves along the wall, using LIDAR data to detect the wall and avoid collisions. The LIDAR sensor in the simulator has a range of 5 m and sends 684 rays, and is analysed to find the nearest obstacle. 3 proportional regulators are used to keep at a fixed distance to the wall, move along it and maintain perpendicular orientation. Code in ```code/solution2a.m```
+The youBot moves along the wall, using LIDAR data to detect the wall and avoid collisions. The LIDAR sensor in the simulator has a range of 5 m and sends 684 rays, and is analysed to find the nearest obstacle. 3 proportional regulators are used to keep at a fixed distance to the wall, move along it and maintain perpendicular orientation. 
+
+Code in ```code/solution2a.m```
 
 [![pic1a](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/vid2a.png)](https://www.youtube.com/watch?v=587Ly53RAOk)
 
-### Bug2 algorithm
+- **Bug2 algorithm**
 
 Bug algorithms assume only local knowledge of the environment, and the robot has simple behaviours - move along a wall or along a straight line toward the goal. 
 
 In Bug 2 algorithm, first a line joining the initial and goal positions, called the ```m-line``` is created. The robot starts to move along this line towards the goal. If an obstacle is encountered, the robot circumnavigates it until the m-line is encountered again, *closer to the goal*. Now the obstacle is left and the robot continues moving along the m-line to reach the goal. 
+
+Code in ```code/solution2b.m```
 
 [![pic1b](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/vid2b.png)](https://www.youtube.com/watch?v=0qlQZZPEeEU)
 
@@ -58,7 +62,7 @@ More on Bug algorithms can be read [here](https://www.cs.cmu.edu/~motionplanning
 
 ## Acknowledgments
 
-Details of the project descriptions can be found on the official course [page](http://rcprg-ros-pkg.github.io/emor_trs/index.html).
+Details of the project descriptions can be found on the official course [page](http://rcprg-ros-pkg.github.io/emor_trs/index.html). Setup instructions can also be found there along with scenes and helper functions needed for have the environment in these projects.
 
 Sometimes the official webpage is not available (or reads **yet to be announced**, depending when in the academic year since EMOR is taught in the winter semester). In such cases, please right click and copy the link address of the project html files (within the folder ```course_page```) and paste it in http://htmlpreview.github.io/
 )
