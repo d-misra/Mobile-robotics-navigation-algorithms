@@ -5,7 +5,7 @@ A collection of algorithms for control and navigation of mobile robots. These pr
 ## Requirements
 - Matlab
 - Peter Corke's Robotics, Vision and Control toolbox
-- CoppeliaSim simulator (earlier known as V-REP)
+- [CoppeliaSim simulator](https://www.coppeliarobotics.com/) (earlier known as V-REP)
 - Matlab bindings for CoppeliaSim
 
 ## Overview
@@ -59,6 +59,18 @@ Code in ```code/solution2b.m```
 [![pic1b](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/vid2b.png)](https://www.youtube.com/watch?v=0qlQZZPEeEU)
 
 More on Bug algorithms can be read [here](https://www.cs.cmu.edu/~motionplanning/lecture/Chap2-Bug-Alg_howie.pdf)
+
+## Project 3
+
+Introduces localization and path planning algorithms. 
+
+- **Localisation using Particle Filter**
+
+
+
+- **Path planning with Wavefront**
+
+More details about wavefront planner can be found [here](http://www.societyofrobots.com/programming_wavefront.shtml)
 
 ## Acknowledgments
 
