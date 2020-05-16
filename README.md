@@ -48,10 +48,13 @@ The youBot moves along the wall, using LIDAR data to detect the wall and avoid c
 
 ### Bug2 algorithm
 
-Bug algorithms assume only local knowledge of the environment, and the robot has simple behaviours - move along a wall or along a straight line toward the goal.
+Bug algorithms assume only local knowledge of the environment, and the robot has simple behaviours - move along a wall or along a straight line toward the goal. 
+
+In Bug 2 algorithm, first a line joining the initial and goal positions, called the ```m-line``` is created. The robot starts to move along this line towards the goal. If an obstacle is encountered, the robot circumnavigates it until the m-line is encountered again, *closer to the goal*. Now the obstacle is left and the robot continues moving along the m-line to reach the goal. 
 
 [![pic1b](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/vid2b.png)](https://www.youtube.com/watch?v=0qlQZZPEeEU)
 
+More on Bug algorithms can be read [here](https://www.cs.cmu.edu/~motionplanning/lecture/Chap2-Bug-Alg_howie.pdf)
 
 ## Acknowledgments
 
