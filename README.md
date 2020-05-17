@@ -98,7 +98,7 @@ An example wavefront planner and the following demo below uses movement in only 
 
 [![pic1b](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/vid3c.png)](https://www.youtube.com/watch?v=y8L_n212hMY)
 
-Other resources on wavefront planner :
+Some resources on wavefront planner :
 - Tutorials [here](http://www.societyofrobots.com/programming_wavefront.shtml) and [here](https://www.cs.cmu.edu/~16311/s07/labs/lab05/)
 - Wikipedia [article](https://www.cs.cmu.edu/~16311/s07/labs/lab05/)
 
