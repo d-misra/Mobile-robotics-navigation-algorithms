@@ -109,6 +109,8 @@ Sometimes the official webpage is not available (or reads **yet to be announced*
 
 Since these tutorials are still part of the ongoing robotics curriculum evaluations at WUT, Poland, the Matlab code for these projects are not publicly released in this repository. It can be made available upon request.
 
+Other robotics projects from my masters can be found at https://github.com/d-misra/EMARO-Robotics-Projects
+
 ## Acknowledgments
 
 Many thanks to Prof. Dawid Seredyński for conducting and preparing content for this excellent course, and also to my classmates and Shreyas for all the discussions and help.
