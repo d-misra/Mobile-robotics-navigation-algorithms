@@ -88,7 +88,11 @@ Motion planning algorithm that prepares the robot trajectory off-line, i.e using
 
 ![wave](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/wave.png)
 
-A path is computed starting from the initial cell to the destination, by selecting the neighbouring cell with the smallest cost. The environment map is already known, where the obstacles (given a fixed cost value) are avoided for a collision-less trajectory. Multiple solutions can be found to reach the goal, and any path consisting of descending values of cost are acceptable. The demo below uses movement in only 4 directions (no diagonal movement).
+A path is computed starting from the initial cell to the destination, by selecting the neighbouring cell with the smallest cost. The environment map is already known, where the obstacles (given a fixed cost value) are avoided for a collision-less trajectory. Multiple solutions can be found to reach the goal, and any path consisting of descending values of cost are acceptable.
+
+An example wavefront planner and the following demo below uses movement in only 4 directions (no diagonal movement).
+
+![wave](https://github.com/d-misra/Motion-planning-for-mobile-robots/blob/master/images/wavefront.jpg)
 
 #### Demo
 
